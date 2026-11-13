@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clínica Odontológica Serena Odonto | Itamaraju, Bahia</title>
+  <meta name="description" content="Atendimento odontológico com hora marcada em Itamaraju, Bahia. Prevenção, implantes, estética e limpeza em ambiente acolhedor.">
+  <style>
+    :root {
+      --azul-escuro: #0b5cad;
+      --azul: #2f8fe6;
+      --azul-claro: #38a3f5;
+      --azul-borda: #cfe4f8;
+      --azul-fundo: #e3f1fd;
+      --texto: #0f1b2d;
+      --texto-suave: #3d5a80;
+      --texto-fraco: #7a93b0;
+      --fundo: #ffffff;
+      --fonte: "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+
+      /* Derivadas da paleta (tons de apoio) */
+      --azul-hover: #084a8c;
+      --fundo-alt: #f4f9fe;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: clip;
+    }
+
+    body {
+      font-family: var(--fonte);
+      color: var(--texto);
+      background: var(--fundo);
+      line-height: 1.6;
+      overflow-x: clip;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, .brand-name {
+      font-family: var(--fonte);
+      color: var(--texto);
+      line-height: 1.25;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 16px;
+      top: -48px;
+      z-index: 1000;
+      background: var(--azul-escuro);
+      color: #FFFFFF;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .skip-link:focus {
+      top: 16px;
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--azul);
+      outline-offset: 3px;
+    }
+
+    main, header, footer {
+      position: relative;
+      z-index: 1;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    section {
+      padding: 64px 0;
+    }
+
+    .bg-alt {
+      background-color: var(--fundo-alt);
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+
+    .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: var(--azul-escuro);
+      color: #FFFFFF;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.125rem;
+      padding: 18px 28px;
+      border-radius: 8px;
+      width: 100%;
+      max-width: 360px;
+      min-height: 56px;
+      transition: background-color 0.2s ease, transform 0.15s ease;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .btn-whatsapp:hover,
+    .btn-whatsapp:focus-visible {
+      background-color: var(--azul-hover);
+    }
+
+    .btn-whatsapp:active {
+      transform: scale(0.98);
+    }
+
+    .cta-wrapper {
+      text-align: center;
+      margin-top: 32px;
+    }
+
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--azul-borda);
+      background-color: var(--fundo);
+    }
+
+    .brand-name {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--texto);
+      text-align: center;
+    }
+
+    .brand-name span {
+      color: var(--azul-escuro);
+      font-weight: 300;
+    }
+
+    .hero {
+      padding: 56px 0 64px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      max-width: 680px;
+      margin: 0 auto 16px;
+    }
+
+    .hero p {
+      font-size: 1.125rem;
+      color: var(--texto-suave);
+      max-width: 580px;
+      margin: 0 auto 32px;
+    }
+
+    .hero-image {
+      display: block;
+      margin-top: 40px;
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid var(--azul-borda);
+      background-color: var(--azul-fundo);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .card {
+      background-color: var(--fundo);
+      border: 1px solid var(--azul-borda);
+      border-radius: 10px;
+      padding: 28px 24px;
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--azul-escuro);
+    }
+
+    .card p {
+      color: var(--texto-suave);
+    }
+
+    .diff-item {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--azul-borda);
+    }
+
+    .diff-item:last-of-type {
+      border-bottom: none;
+    }
+
+    .diff-icon {
+      width: 40px;
+      height: 40px;
+      background-color: var(--azul-fundo);
+      color: var(--azul-escuro);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+
+    .diff-item h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .diff-item p {
+      color: var(--texto-suave);
+    }
+
+    .step-card {
+      text-align: center;
+      padding: 24px;
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background-color: var(--azul-escuro);
+      color: #FFFFFF;
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-bottom: 16px;
+    }
+
+    .step-card h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .step-card p {
+      color: var(--texto-suave);
+    }
+
+    .review-card {
+      background-color: var(--fundo);
+      border: 1px dashed var(--azul);
+      border-radius: 10px;
+      padding: 24px;
+    }
+
+    .review-text {
+      font-style: italic;
+      color: var(--texto-suave);
+      margin-bottom: 12px;
+    }
+
+    .review-author {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--azul-escuro);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 32px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 1px solid var(--azul-borda);
+      background-color: var(--fundo);
+    }
+
+    .contact-box {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-info {
+      margin: 28px 0;
+      color: var(--texto-suave);
+      font-size: 1.05rem;
+    }
+
+    .contact-info p {
+      margin-bottom: 8px;
+    }
+
+    .map-placeholder {
+      width: 100%;
+      height: 260px;
+      border: 1px solid var(--azul-borda);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 24px;
+    }
+
+    .map-placeholder iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    footer {
+      background-color: var(--texto);
+      color: #F8FAFC;
+      text-align: center;
+      padding: 32px 20px;
+      font-size: 0.95rem;
+    }
+
+    footer p {
+      margin-bottom: 8px;
+    }
+
+    .cro-info {
+      font-size: 0.85rem;
+      color: var(--texto-fraco);
+    }
+
+    @media (min-width: 768px) {
+      .hero h1 {
+        font-size: 2.75rem;
+      }
+
+      .hero-image {
+        height: 380px;
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* ---- Animações ---- */
+    @keyframes subir {
+      from { opacity: 0; transform: translateY(32px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    @keyframes pulsar {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(11, 92, 173, .35); }
+      70% { box-shadow: 0 0 0 14px rgba(11, 92, 173, 0); }
+    }
+
+    .hero h1 { animation: subir 1.2s ease both; }
+    .hero p { animation: subir 1.2s ease .3s both; }
+    .hero .btn-whatsapp { animation: subir 1.2s ease .6s both, pulsar 2.4s ease-out 1.8s infinite; }
+    .hero-image { animation: subir 1.4s ease .9s both; }
+
+    .js .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .js .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .card, .review-card, .step-card {
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .card.visible:hover,
+    .review-card.visible:hover,
+    .step-card.visible:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(11, 92, 173, .12);
+    }
+
+    .diff-icon {
+      transition: transform .3s ease, background-color .3s ease;
+    }
+
+    .diff-item:hover .diff-icon {
+      transform: rotate(-8deg) scale(1.08);
+      background-color: #CFE4F8;
+    }
+
+    .gallery-grid img {
+      transition: transform .4s ease;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.02);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .btn-whatsapp {
+        transition: none;
+      }
+
+      .btn-whatsapp:active {
+        transform: none;
+      }
+
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+
+      .js .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header>
+    <div class="container">
+      <div class="brand-name">Clínica Odontológica <span>Serena Odonto</span></div>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero">
+      <div class="container">
+        <h1>Atendimento odontológico com hora marcada e sem pressa</h1>
+        <p>Cuidamos da saúde bucal de adultos e famílias com planejamento claro e ambiente acolhedor.</p>
+
+        <a href="https://wa.me/5573999000000?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20Clínica%20Serena%20Odonto."
+           class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+          </svg>
+          Agendar consulta pelo WhatsApp
+        </a>
+
+        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1400&q=80"
+             alt="Consultório odontológico com cadeira odontológica"
+             class="hero-image"
+             width="1400"
+             height="800">
+      </div>
+    </section>
+
+    <section class="bg-alt" id="servicos">
+      <div class="container">
+        <h2>Nossos Principais Serviços</h2>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Prevenção e Limpeza</h3>
+            <p>Check-up completo e profilaxia para manter seus dentes e gengivas sempre saudáveis.</p>
+          </div>
+          <div class="card">
+            <h3>Implantes e Reabilitação</h3>
+            <p>Soluções fixas e seguras para você voltar a mastigar e sorrir com conforto.</p>
+          </div>
+          <div class="card">
+            <h3>Estética e Clareamento</h3>
+            <p>Tratamentos personalizados para harmonizar o seu sorriso de forma natural.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="diferenciais">
+      <div class="container">
+        <h2>Por que escolher o Serena Odonto</h2>
+
+        <div class="diff-item">
+          <div class="diff-icon" aria-hidden="true">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Respeito ao seu horário</h3>
+          <p>Atendimento pontual com agenda organizada para você não perder tempo em salas de espera.</p>
+        </div>
+
+        <div class="diff-item">
+          <div class="diff-icon" aria-hidden="true">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3>Planejamento transparente</h3>
+          <p>Explicamos cada etapa do seu tratamento de forma simples antes de iniciar qualquer procedimento.</p>
+        </div>
+
+        <div class="diff-item">
+          <div class="diff-icon" aria-hidden="true">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          </div>
+          <h3>Conforto e tranquilidade</h3>
+          <p>Técnicas modernas e ambiente tranquilo, pensados especialmente para quem sente receio de ir ao dentista.</p>
+        </div>
+
+        <div class="cta-wrapper">
+          <a href="https://wa.me/5573999000000?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20Clínica%20Serena%20Odonto."
+             class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+            Agendar consulta pelo WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-alt" id="como-funciona">
+      <div class="container">
+        <h2>Como funciona o atendimento</h2>
+        <div class="grid-3">
+          <div class="step-card">
+            <div class="step-number">1</div>
+            <h3>Agenda pelo WhatsApp</h3>
+            <p>Envie uma mensagem, escolha o melhor horário e confirme sua consulta sem ligação.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">2</div>
+            <h3>Avaliação e planejamento</h3>
+            <p>Fazemos o exame, explicamos as opções e alinhamos o tratamento antes de começar.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-number">3</div>
+            <h3>Cuidado no seu ritmo</h3>
+            <p>Seguimos o plano com pontualidade, clareza e acompanhamento em cada etapa.</p>
+          </div>
+        </div>
+        <div class="cta-wrapper">
+          <a href="https://wa.me/5573999000000?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20Clínica%20Serena%20Odonto."
+             class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+            Agendar consulta pelo WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="depoimentos">
+      <div class="container">
+        <h2>O que dizem nossos pacientes e nosso espaço</h2>
+
+        <div class="grid-3">
+          <div class="review-card">
+            <p class="review-text">"Marquei pelo WhatsApp e fui atendido no horário. Expliquei o tratamento com calma e saí com segurança."</p>
+            <div class="review-author">Ana Paula S.</div>
+          </div>
+          <div class="review-card">
+            <p class="review-text">"Fazia tempo que evitava dentista. Aqui o atendimento é sem pressa e o ambiente é bem acolhedor."</p>
+            <div class="review-author">Carlos Mendes</div>
+          </div>
+          <div class="review-card">
+            <p class="review-text">"Levei minha mãe para avaliação. O planejamento ficou claro desde o primeiro dia e o valor foi combinado sem surpresas."</p>
+            <div class="review-author">Juliana Rocha</div>
+          </div>
+        </div>
+
+        <div class="gallery-grid">
+          <img src="https://images.unsplash.com/photo-1606811841689-23dfddceee95?auto=format&fit=crop&w=1000&q=80"
+               alt="Imagem ilustrativa de sala de atendimento odontológico"
+               width="1000"
+               height="660"
+               loading="lazy">
+          <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1000&q=80"
+               alt="Imagem ilustrativa de ambiente de clínica organizado"
+               width="1000"
+               height="660"
+               loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-alt" id="contato">
+      <div class="container">
+        <div class="contact-box">
+          <h2>Venha nos visitar</h2>
+          <p>Estamos no centro de Itamaraju, com fácil acesso e horário organizado para você.</p>
+          <div class="contact-info">
+            <p>Rua do Comércio, 150 - Centro</p>
+            <p>Itamaraju - BA, 45836-000</p>
+            <p>Segunda a sexta, das 8h às 18h</p>
+            <p>WhatsApp: (73) 99900-0000</p>
+          </div>
+          <a href="https://wa.me/5573999000000?text=Olá!%20Gostaria%20de%20agendar%20uma%20consulta%20na%20Clínica%20Serena%20Odonto."
+             class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
+            Agendar consulta pelo WhatsApp
+          </a>
+          <div class="map-placeholder">
+            <iframe
+              title="Mapa da Clínica Odontológica Serena Odonto em Itamaraju, Bahia"
+              src="https://maps.google.com/maps?q=Itamaraju%2C%20Bahia&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Clínica Odontológica Serena Odonto</p>
+    <p>Itamaraju, Bahia</p>
+    <p class="cro-info">Responsável técnico: Dr(a). [Nome] | CRO-BA 00000</p>
+  </footer>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      root.classList.add('js');
+
+      var alvos = document.querySelectorAll(
+        '#servicos h2, #diferenciais h2, #como-funciona h2, #depoimentos h2, #contato h2, ' +
+        '.card, .diff-item, .step-card, .review-card, .gallery-grid img, .contact-box, .map-placeholder'
+      );
+
+      alvos.forEach(function (el) { el.classList.add('reveal'); });
+
+      if (!('IntersectionObserver' in window)) {
+        alvos.forEach(function (el) { el.classList.add('visible'); });
+        return;
+      }
+
+      var observador = new IntersectionObserver(function (entradas) {
+        entradas.forEach(function (entrada) {
+          if (entrada.isIntersecting) {
+            entrada.target.classList.add('visible');
+            observador.unobserve(entrada.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      alvos.forEach(function (el) { observador.observe(el); });
+    })();
+  </script>
+</body>
+</html>
